@@ -1,0 +1,35 @@
+# kind: pipeline
+# name: default
+
+# steps:
+# - name: install
+#   image: johnpapa/angular-cli
+#   commands:
+#     - npm install
+
+# - name: test
+#   image: trion/ng-cli-karma:6.2.1
+#   commands:
+#     - ng test --progress false --watch false
+
+# - name: build
+#   image: johnpapa/angular-cli
+#   commands:
+#     - ng build --prod --base-href "https://miwtoo.github.io/drone-angular-git-test/"
+# - name: Run 
+#   image: johnpapa/angular-cli
+#   commands: 
+#     - ng build --prod --base-href 
+
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+
+- name: frontend
+  image: node
+  commands:
+  - npm install
+  - npm run start
