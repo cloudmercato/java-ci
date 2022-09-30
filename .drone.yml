@@ -29,7 +29,7 @@ name: default
 steps:
 
 - name: frontend
-  image: node
+  image: node:16.13.0
   commands:
   - npm install
   - npm run start
